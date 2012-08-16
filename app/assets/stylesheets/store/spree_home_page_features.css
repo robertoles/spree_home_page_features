@@ -1,0 +1,21 @@
+/*
+*= require flexslider
+*= require store/spree_core
+*/
+
+.flexslider .hero, .section-header .hero {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.flexslider, .section-header {
+  height: 257px;
+  background-color: #bbb;
+}
+
+
+#wrapper .section-header, .flexslider .feature{
+  height: 257px;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+}

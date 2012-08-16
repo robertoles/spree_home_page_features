@@ -1,0 +1,16 @@
+<%= f.field_container :title do %>
+  <%= f.label :title, t(:title) %><br />
+  <%= f.text_field :title %>
+<% end %>
+<%= f.field_container :body do %>
+  <%= f.label :body, t(:body) %><br />
+  <%= f.text_area :body %>
+<% end %>
+<%= f.field_container :style do %>
+  <%= f.label :style, t(:style) %><br />
+  <%= f.select :style, Spree::HomePageFeature.styles_dropdown %>
+<% end %>
+<%= f.field_container :publish do %>
+  <%= f.label :publish, t(:publish) %><br />
+  <%= f.check_box :publish %>
+<% end %>

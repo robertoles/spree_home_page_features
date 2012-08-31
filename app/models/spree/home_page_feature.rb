@@ -5,6 +5,10 @@ module Spree
 
     scope :published, where(publish: true)
 
+    def style
+      self.style || ""
+    end
+
     class << self
       def styles
         @styles ||= []

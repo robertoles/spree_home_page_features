@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_home_page_features'
-  s.version     = '1.1.3'
+  s.version     = '1.2.0'
   s.summary     = 'Adds feature articles to the spree home page'
   s.description = 'Allows you to edit articles in the spree admin, which will be displayed on your homepage'
   s.required_ruby_version = '>= 1.9.2'
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 1.1.3'
+  s.add_dependency 'spree_core', '~> 1.2'
 
   s.add_development_dependency 'capybara', '1.0.1'
   s.add_development_dependency 'factory_girl', '~> 2.6.4'

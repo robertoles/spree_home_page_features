@@ -1,7 +1,7 @@
 <div class="flexslider">
   <ul class="slides">
     <% Spree::HomePageFeature.published.each do |feature| %>
-      <li class="feature <%= feature.style %>">
+      <li class="feature <%= feature.display %>">
         <div class="hero padded vertical-margin">
           <div class="title"><%= feature.title %></div>
           <div class="body"><%= feature.body %></div>

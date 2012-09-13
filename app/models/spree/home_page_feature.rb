@@ -5,7 +5,7 @@ module Spree
 
     scope :published, where(publish: true)
 
-    def style
+    def display
       self.style || ""
     end
 

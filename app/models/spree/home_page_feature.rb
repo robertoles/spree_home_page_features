@@ -1,13 +1,9 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
     self.table_name = 'home_page_features'
-    attr_accessible :body, :publish, :style, :title
+    attr_accessible :title, :body, :publish, :style
 
     scope :published, where(publish: true)
-
-    def display
-      self.style || ""
-    end
 
     class << self
       def styles
@@ -19,8 +15,9 @@ module Spree
       end
 
       def styles_dropdown
-        styles.map {|s| [s.humanize, s]}
+        styles.map { |s| [ s.humanize, s ] }
       end
     end
+    
   end
 end

@@ -2,4 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  new_home_page_feature: "New Feature"
+  home_page_feature: "Home Page Feature"
+  home_page_features: "Home Page Features"
+  listing_home_page_features: "Listing Home Page Features"
+  editing_home_page_feature: "Editing Home Page Feature"
+
+  activerecord:
+    attributes:
+      spree/home_page_feature:
+        title: "Title"
+        body: "Body"
+        style: "Style"
+        published: "Published"

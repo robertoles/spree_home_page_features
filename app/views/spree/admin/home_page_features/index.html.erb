@@ -1,3 +1,4 @@
+<% scope = 'activerecord.attributes.spree/home_page_feature' -%>
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
 <div class="toolbar" data-hook="toolbar">
@@ -15,9 +16,9 @@
 <table class="index" id='listing_home_page_features'>
   <thead>
     <tr>
-      <th><%= t(:title) %></th>
-      <th><%= t(:style) %></th>
-      <th><%= t(:published) %></th>
+      <th><%= t(:title, :scope => scope) %></th>
+      <th><%= t(:style, :scope => scope) %></th>
+      <th><%= t(:published, :scope => scope) %></th>
       <th></th>
     </tr>
   </thead>

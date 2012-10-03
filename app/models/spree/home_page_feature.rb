@@ -3,6 +3,13 @@ module Spree
     self.table_name = 'home_page_features'
     attr_accessible :title, :body, :publish, :style
 
+    validates :title,
+      presence: true,
+      length: { minimum: 1 }
+    validates :body,
+      presence: true,
+      length: { minimum: 1 }
+
     scope :published, where(publish: true)
 
     class << self

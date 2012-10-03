@@ -1,0 +1,14 @@
+hu:
+  new_home_page_feature: "Új kiemelés"
+  home_page_feature: "Kiemelés"
+  home_page_features: "Kiemelések"
+  listing_home_page_features: "Kiemelések listázása"
+  editing_home_page_feature: "Kiemelés szerkesztése"
+
+  activerecord:
+    attributes:
+      spree/home_page_feature:
+        title: "Cím"
+        body: "Törzs"
+        style: "Stílus"
+        published: "Publikálva"

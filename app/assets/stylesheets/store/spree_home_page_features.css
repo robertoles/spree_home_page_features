@@ -10,12 +10,8 @@
 
 .flexslider, .section-header {
   height: 257px;
-  background-color: #bbb;
 }
 
-
-#wrapper .section-header, .flexslider .feature{
+#wrapper .section-header, .flexslider .feature {
   height: 257px;
-  border-bottom-style: solid;
-  border-bottom-width: 5px;
 }

@@ -25,7 +25,7 @@ Styles
 
 When you create a feature in the backend, you have the option of setting a style. This will add the style as class to the feature div. I intended this to be used to allow the site administrator select a backdrop for the article they are writing. To set the available styles in the dropdown, simply add the list of styles you would like available to a decorator in your models directory...
 
-    # ./app/models/spree/home_page_feature_decorator
+    # ./app/models/spree/home_page_feature_decorator.rb
     Spree::HomePageFeature.styles = ["style1", "style2", "etc"]
 
 You can then define a css file in your assets folder which define the styles...

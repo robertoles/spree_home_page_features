@@ -8,6 +8,10 @@
   <%= f.label :body, t(:body, :scope => scope) %><br />
   <%= f.text_area :body %>
 <% end %>
+<%= f.field_container :image do %>
+  <%= f.label :image, t(:image, :scope => scope) %><br />
+  <%= f.file_field :image %>
+<% end %>
 <%= f.field_container :style do %>
   <%= f.label :style, t(:style, :scope => scope) %><br />
   <%= f.select :style, Spree::HomePageFeature.styles_dropdown %>

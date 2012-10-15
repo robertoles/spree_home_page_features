@@ -4,7 +4,7 @@
 
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @home_page_feature } %>
 
-<%= form_for [:admin, @home_page_feature], url: spree.admin_home_page_feature_path(@home_page_feature) do |f| %>
+<%= form_for [:admin, @home_page_feature], url: spree.admin_home_page_feature_path(@home_page_feature), html: { multipart: true } do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
 <% end %>

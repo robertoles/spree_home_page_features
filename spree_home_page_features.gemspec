@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_home_page_features'
-  s.version     = '1.2.2'
+  s.version     = '1.2.3'
   s.summary     = 'Adds feature articles to the spree home page'
   s.description = 'Allows you to edit articles in the spree admin, which will be displayed on your homepage'
   s.required_ruby_version = '>= 1.9.2'

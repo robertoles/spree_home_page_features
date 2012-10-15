@@ -2,10 +2,16 @@
   <ul class="slides">
     <% Spree::HomePageFeature.published.each do |feature| %>
       <li class="feature <%= feature.style? ? feature.style : "" %>">
-        <div class="hero padded vertical-margin">
-          <h4><%= feature.title %></h4>
-          <div><%= feature.body %></div>
-        </div>
+        <% if feature.image %>
+          <div class="feture-image-container">
+            <%= image_tag feature.image.url %>
+          </div>
+        <% else %>
+          <div class="hero padded vertical-margin">
+            <h4><%= feature.title %></h4>
+            <div><%= feature.body %></div>
+          </div>
+        <% end %>
       </li>
     <% end %>
   </ul>

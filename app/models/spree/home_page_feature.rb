@@ -1,7 +1,8 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
     self.table_name = 'home_page_features'
-    attr_accessible :title, :body, :publish, :style, :image
+    attr_accessible :title, :body, :publish, :style, :image, 
+                    :image_file_name, :image_file_size, :image_content_type, :image_updated_at
 
     validates :title,
       presence: true,

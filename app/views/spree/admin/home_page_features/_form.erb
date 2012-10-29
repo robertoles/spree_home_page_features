@@ -20,3 +20,7 @@
   <%= f.label :publish, t(:published, :scope => scope) %><br />
   <%= f.check_box :publish %>
 <% end %>
+<%= f.field_container :product_id do %>
+  <%= f.label :product_id, t(:product, :scope => scope) %><br />
+  <%= f.select :product_id, Spree::Product.active.order(:name).map {|p| [p.name, p.id]}, include_blank: 'None' %><br />
+<% end %>

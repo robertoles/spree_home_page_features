@@ -2,6 +2,9 @@
   <ul class="slides">
     <% Spree::HomePageFeature.published.each do |feature| %>
       <li class="feature <%= feature.style? ? feature.style : "" %>">
+        <% if feature.product %>
+          <%= link_to tag(:span), spree.product_path(feature.product) %>
+        <% end %>
         <% if feature.image_file_name.present? %>
           <div class="feture-image-container">
             <%= image_tag feature.image.url %>

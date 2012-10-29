@@ -1,7 +1,7 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
     self.table_name = 'home_page_features'
-    attr_accessible :title, :body, :publish, :style, :image, 
+    attr_accessible :title, :body, :publish, :style, :image, :product_id, 
                     :image_file_name, :image_file_size, :image_content_type, :image_updated_at
 
     validates :title,
@@ -18,6 +18,8 @@ module Spree
     has_attached_file :image,
                       :url => '/spree/home_page_features/:id/:style/:basename.:extension',
                       :path => ':rails_root/public/spree/home_page_features/:id/:style/:basename.:extension'
+
+    belongs_to :product
 
     if Spree::Config[:use_s3]
       s3_creds = { :access_key_id => Spree::Config[:s3_access_key], :secret_access_key => Spree::Config[:s3_secret], :bucket => Spree::Config[:s3_bucket] }

@@ -4,6 +4,8 @@
       <li class="feature <%= feature.style? ? feature.style : "" %>">
         <% if feature.product %>
           <%= link_to tag(:span), spree.product_path(feature.product) %>
+        <% elsif feature.taxon %>
+          <%= link_to tag(:span), seo_url(feature.taxon) %>
         <% end %>
         <% if feature.image_file_name.present? %>
           <div class="feture-image-container">

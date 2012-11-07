@@ -24,3 +24,7 @@
   <%= f.label :product_id, t(:product, :scope => scope) %><br />
   <%= f.select :product_id, Spree::Product.active.order(:name).map {|p| [p.name, p.id]}, include_blank: 'None' %><br />
 <% end %>
+<%= f.field_container :taxon_id do %>
+  <%= f.label :taxon_id, t(:taxon, :scope => scope) %><br />
+  <%= f.select :taxon_id, Spree::Taxon.order(:name).all.map {|t| [t.name_with_parents, t.id]}, include_blank: 'None' %><br />
+<% end %>

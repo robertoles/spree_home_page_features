@@ -4,9 +4,17 @@
   <%= f.label :title, t(:title, :scope => scope) %><br />
   <%= f.text_field :title %>
 <% end %>
+<%= f.field_container :display_title do %>
+  <%= f.label :display_title, t(:display_title, :scope => scope) %><br />
+  <%= f.check_box :display_title %>
+<% end %>
 <%= f.field_container :body do %>
   <%= f.label :body, t(:body, :scope => scope) %><br />
   <%= f.text_area :body %>
+<% end %>
+<%= f.field_container :display_body do %>
+  <%= f.label :display_body, t(:display_body, :scope => scope) %><br />
+  <%= f.check_box :display_body %>
 <% end %>
 <%= f.field_container :image do %>
   <%= f.label :image, t(:image, :scope => scope) %><br />

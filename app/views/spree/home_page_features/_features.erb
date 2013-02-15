@@ -8,15 +8,21 @@
           <%= link_to tag(:span), seo_url(feature.taxon) %>
         <% end %>
         <% if feature.image_file_name.present? %>
-          <div class="feture-image-container">
-            <%= image_tag feature.image.url %>
-          </div>
+          <div class="feature-image-container" style="background-image: url('<%= feature.image.url %>');">
         <% else %>
+          <div>
+        <% end %>
+        <% if feature.display_texts? %>
           <div class="hero padded vertical-margin">
-            <h4><%= feature.title %></h4>
-            <div><%= feature.body %></div>
+            <% if feature.display_title? %>
+              <h4><%= feature.title %></h4>
+            <% end %>
+            <% if feature.display_body? %>
+              <div><%= feature.body %></div>
+            <% end %>
           </div>
         <% end %>
+        </div>
       </li>
     <% end %>
   </ul>

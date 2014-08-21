@@ -1,10 +1,5 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
-    self.table_name = 'home_page_features'
-    attr_accessible :title, :body, :publish, :style, :image, :product_id, :taxon_id,
-                    :image_file_name, :image_file_size, :image_content_type, :image_updated_at,
-                    :display_title, :display_body
-
     validates :title,
       presence: true,
       length: { minimum: 1 }
@@ -23,15 +18,6 @@ module Spree
     belongs_to :product
     belongs_to :taxon
 
-    if Spree::Config[:use_s3]
-      s3_creds = { :access_key_id => Spree::Config[:s3_access_key], :secret_access_key => Spree::Config[:s3_secret], :bucket => Spree::Config[:s3_bucket] }
-      Spree::HomePageFeature.attachment_definitions[:image][:storage] = :s3
-      Spree::HomePageFeature.attachment_definitions[:image][:s3_credentials] = s3_creds
-      Spree::HomePageFeature.attachment_definitions[:image][:s3_headers] = ActiveSupport::JSON.decode(Spree::Config[:s3_headers])
-      Spree::HomePageFeature.attachment_definitions[:image][:bucket] = Spree::Config[:s3_bucket]
-      Spree::HomePageFeature.attachment_definitions[:image][:s3_protocol] = Spree::Config[:s3_protocol] unless Spree::Config[:s3_protocol].blank?
-    end
-
     class << self
       def styles
         @styles ||= []
@@ -49,6 +35,13 @@ module Spree
     def display_texts?
       display_body? || display_title?
     end
-    
+
+    def allowed_attributes
+      [
+       :title, :body, :publish, :style, :image, :product_id, :taxon_id,
+       :image_file_name, :image_file_size, :image_content_type, :image_updated_at,
+       :display_title, :display_body
+      ]
+    end
   end
 end

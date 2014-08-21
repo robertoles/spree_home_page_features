@@ -1,9 +1,6 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
     self.table_name = 'home_page_features'
-    attr_accessible :title, :body, :publish, :style, :image, :product_id, :taxon_id,
-                    :image_file_name, :image_file_size, :image_content_type, :image_updated_at,
-                    :display_title, :display_body
 
     validates :title,
       presence: true,
@@ -49,6 +46,13 @@ module Spree
     def display_texts?
       display_body? || display_title?
     end
-    
+
+    def allowed_attributes
+      [
+       :title, :body, :publish, :style, :image, :product_id, :taxon_id,
+       :image_file_name, :image_file_size, :image_content_type, :image_updated_at,
+       :display_title, :display_body
+      ]
+    end
   end
 end

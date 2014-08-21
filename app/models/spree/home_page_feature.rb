@@ -1,7 +1,5 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
-    self.table_name = 'home_page_features'
-
     validates :title,
       presence: true,
       length: { minimum: 1 }

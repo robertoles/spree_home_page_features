@@ -16,7 +16,7 @@ module Spree
 
     validates_attachment_presence :image, unless: :body
 
-    scope :published, where(publish: true)
+    scope :published, -> { where publish: true }
 
     belongs_to :product
     belongs_to :taxon

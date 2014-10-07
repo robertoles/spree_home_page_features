@@ -1,19 +1,22 @@
 module Spree
   class HomePageFeature < ActiveRecord::Base
+
     validates :title,
       presence: true,
       length: { minimum: 1 }
+
     validates :body,
       presence: true,
       length: { minimum: 1 },
       unless: :image
-    validates_attachment_presence :image, unless: :body
-
-    scope :published, where(publish: true)
 
     has_attached_file :image,
                       :url => '/spree/home_page_features/:id/:style/:basename.:extension',
                       :path => ':rails_root/public/spree/home_page_features/:id/:style/:basename.:extension'
+
+    validates_attachment_presence :image, unless: :body
+
+    scope :published, where(publish: true)
 
     belongs_to :product
     belongs_to :taxon

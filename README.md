@@ -10,7 +10,7 @@ Installation
 First add the reference to your gem file...
 
     # Gemfile
-    gem 'spree_home_page_features', '~> 1.3.0'
+    gem 'spree_home_page_features'
 
 
 Then from your console bundle it & install the migration...

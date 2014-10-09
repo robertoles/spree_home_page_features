@@ -16,6 +16,8 @@ module Spree
 
     validates_attachment_presence :image, unless: :body
 
+    validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+
     scope :published, -> { where publish: true }
 
     belongs_to :product

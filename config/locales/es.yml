@@ -1,0 +1,17 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  new_home_page_feature: Nueva vitrina
+  home_page_feature: Vitrina
+  home_page_features: Vitrinas
+  listing_home_page_features: Vitrinas
+  editing_home_page_feature: Editar vitrina
+
+  activerecord:
+    attributes:
+      spree/home_page_feature:
+        title: Título
+        body: Contenido
+        style: Estilo
+        published: Publicada

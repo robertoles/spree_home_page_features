@@ -1,6 +1,6 @@
 class CreateHomePageFeatures < ActiveRecord::Migration
   def change
-    create_table :home_page_features do |t|
+    create_table :spree_home_page_features do |t|
       t.string :title, :null => false
       t.text :body, :null => false
       t.string :style
@@ -9,6 +9,6 @@ class CreateHomePageFeatures < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :home_page_features, :publish
+    add_index :spree_home_page_features, :publish
   end
 end
